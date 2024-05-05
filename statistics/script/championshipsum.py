@@ -9,8 +9,8 @@ class ScoreCalculator:
     def calculate_scores(self):
         with open(self.output_path, 'w') as file:
             for race in self.races:
-                for format in self.formats:
-                    command = f'python3 score.py {race} {format}'
+                for formated in self.formats:
+                    command = f"python3 score.py {race} {formated}"
                     result = subprocess.run(command, shell=True, capture_output=True, text=True)
                     output = result.stdout.strip()
                     file.write(output + '\n')
@@ -31,10 +31,10 @@ class ScoreCalculator:
 
         return jack_total, cristian_total
 
-def main():
+def championship_total():
     races = ['china', 'miami']
     formats = ['sprint', 'race']
-    output_path = '/Users/jackmassey/Desktop/Bureau/f1-standings-score/championship.txt'
+    output_path = '/Users/jackmassey/Desktop/Bureau/f1-standings-score/statistics/log/championship.txt'
 
     calculator = ScoreCalculator(races, formats, output_path)
     calculator.calculate_scores()
@@ -45,4 +45,4 @@ def main():
     print("Cristian's total points:", cristian_total)
 
 if __name__ == '__main__':
-    main()
+    championship_total()

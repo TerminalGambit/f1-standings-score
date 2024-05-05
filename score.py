@@ -1,4 +1,9 @@
+import sys
 import os
+from statistics.script import championshipsum
+
+project_root = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(project_root)
 
 def read_standings(filename):
     """Reads standings from a file, returning a dictionary of drivers to their positions."""
@@ -52,9 +57,12 @@ def main(track, event_type):
 
 if __name__ == '__main__':
     import argparse
-    parser = argparse.ArgumentParser(description='Calculate F1 prediction scores.')
-    parser.add_argument('track', type=str, help='Track location (e.g., china)')
-    parser.add_argument('event_type', choices=['race', 'sprint'], help='Type of event: race or sprint')
-    args = parser.parse_args()
-    
-    main(args.track, args.event_type)
+    if len(sys.argv) > 1 and sys.argv[1] == "championship":
+        championshipsum.championship_total()
+    else:
+        parser = argparse.ArgumentParser(description='Calculate F1 prediction scores.')
+        parser.add_argument('track', type=str, help='Track location (e.g., china)')
+        parser.add_argument('event_type', choices=['race', 'sprint'], help='Type of event: race or sprint')
+        args = parser.parse_args()
+        
+        main(args.track, args.event_type)
