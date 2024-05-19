@@ -32,7 +32,7 @@ class ScoreCalculator:
         return jack_total, cristian_total
 
 def championship_total():
-    races = ['china', 'miami']
+    races = ['china', 'miami', 'imola', 'monaco']
     formats = ['sprint', 'race']
     output_path = '/Users/jackmassey/Desktop/Bureau/f1-standings-score/statistics/log/championship.txt'
 

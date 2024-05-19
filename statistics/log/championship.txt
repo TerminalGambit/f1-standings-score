@@ -6,3 +6,8 @@ Jack's total points: 187
 Cristian's total points: 217
 Jack's total points: 239
 Cristian's total points: 296
+One or more required files are missing.
+Jack's total points: 340
+Cristian's total points: 300
+One or more required files are missing.
+One or more required files are missing.
